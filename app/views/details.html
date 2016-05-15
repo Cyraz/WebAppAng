@@ -12,3 +12,39 @@
   </div>
   <a href="/#v1">&laquo Back</a>
 </section>
+<div class="card">
+  <h1>Acedemic Details</h1>
+   <h2 class="card">{{artists[whichItem].faculty}}</h2>
+  <table class="card table table-condensed" >
+    <tr>
+      <td>Eligible for Erasmus </td>
+      <td ><span class="label label-info">{{artists[whichItem].elg}}</span></td>
+
+    </tr>
+  </table>
+
+  <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">First Semester </div>
+
+    <!-- Table -->
+    <table class="table table-condensed ">
+      <tr  ng-repeat="sub in semone ">
+        <td>{{sub.name}}</td>
+        <td>{{sub.marks}}</td>
+      </tr>
+    </table>
+  </div>
+  <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Second Semester </div>
+
+    <!-- Table -->
+    <table class="table table-condensed">
+      <tr  ng-repeat="sub in semtwo ">
+        <td>{{sub.name}}</td>
+        <td>{{sub.marks}}</td>
+      </tr>
+    </table>
+  </div>
+</div>

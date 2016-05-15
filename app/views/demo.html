@@ -1,9 +1,9 @@
 
 <div ng-controller="demo">
 <div class="search">
-  <h1>Person Directory</h1>
+  <h1>Erasmus Student Portal</h1>
   <label>Search:</label>
-  <input ng-model="query" placeholder="Search for Artist" autofocus>
+  <input ng-model="query" placeholder="Search for Student" autofocus>
   <label class="formgroup">by:
   <select ng-model="arto">
     <option value="name">Name</option>
@@ -20,7 +20,7 @@
   </label>
 </div>
 
-    <ul class="artistlist" ng-show="query">
+    <ul class="artistlist" >
       <li class="artist cf" ng-repeat="item in artists | filter: query | orderBy: arto:direction">
         <a href="#/details/{{artists.indexOf(item)}}">
         <img ng-src="images/{{item.shortname}}_tn.jpg" alt="Photo of {{item.name}}">

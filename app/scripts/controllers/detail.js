@@ -6,6 +6,8 @@ angular.module('configuratorApp').
   controller('detailCtrl',['$scope' , '$http' ,'$routeParams', function ($scope , $http , $routeParams) {
   $http.get('data/data.json').success(function (data) {
     $scope.artists=data;
+    $scope.semone=data[$routeParams.itemId].firstsem;
+    $scope.semtwo=data[$routeParams.itemId].secondsem;
     $scope.whichItem=$routeParams.itemId;
 
     if ($routeParams.itemId > 0) {
@@ -21,5 +23,6 @@ angular.module('configuratorApp').
     }
 
   });
+
 
 }]);

@@ -1,0 +1,18 @@
+[
+  {
+    "firstsem": {
+      "subjects": [
+        {"model":"Sentra", "doors":4},
+        {"model":"Maxima", "doors":4}
+      ]
+    }
+  },
+  {
+    "firstsem": {
+      "subjects": [
+        {"model":"Sentra", "doors":4},
+        {"model":"Maxima", "doors":4}
+      ]
+    }
+  }
+]
