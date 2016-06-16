@@ -1,23 +1,151 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
+<div >
+  <div>
+    <section>
+      <div class="card" >
+        <img src="images/car.png" width="810px" height="450px"> </img>
+        <div id="config_wheelrear" style="display: block; top: 251.5px; left: 573.5px; z-index: 99;">
+          <img ng-src="{{demoRim}}" id="config_wheelR" style="height: 92px; width: 92px; transform: rotate(0deg);">
+        </div>
+        <div id="config_wheelfront" style="display: block; top: 251.5px; left: 117.5px; z-index: 99;">
+          <img ng-src="{{demoRim}}" id="config_wheelF" style="height: 92px; width: 92px; transform: rotate(0deg);">
+        </div>
+
+      </div>
+    </section>
+    <div class="card-v1" >
+      <ul class="nav nav-pills nav-justified" >
+        <li role="presentation" class="{{isActiveTab(1)}}"><a href ng-click="selectedTab =1">Car</a></li>
+        <li role="presentation" class="{{isActiveTab(2)}}"><a href ng-click="selectedTab =2">Wheels</a></li>
+        <li role="presentation" class="{{isActiveTab(3)}}"><a href ng-click="selectedTab =3">Brand</a></li>
+      </ul>
+
+      <div ng-show="selectedTab ===1">
+        <p>Place holder for car model</p>
+        <div class="containerCustom">
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Year
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </div>
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Car Maker
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </div>
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Car Model
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </div>
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Version
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div ng-show="selectedTab ===2">
+        <div class="card-v2">
+        <div id="container">
+          <div ng-click="restoreRim()" ng-hide="picName1 === 'NA'">        <div  style="display: block; margin-top: 5px; top: 251.5px; left: 117.5px; z-index: 99;">
+            <img ng-src="http://www.realmags.com/rest/api/wheel/{{picName1}}/pic?type=thumb"  style="height: 92px; width: 92px; transform: rotate(0deg);">
+          </div>
+          </div>
+          <div ng-click="updateRim(picName2)" ng-hide="picName2 === 'NA'">        <div  style="display: block; margin-top: 5px; top: 251.5px; left: 117.5px; z-index: 99;">
+            <img ng-src="http://www.realmags.com/rest/api/wheel/{{picName2}}/pic?type=thumb"  style="height: 92px; width: 92px; transform: rotate(0deg);">
+          </div>
+          </div>
+          <div ng-click="updateRim(picName3)" ng-hide="picName3 === 'NA'">        <div  style="display: block; margin-top: 5px; top: 251.5px; left: 117.5px; z-index: 99;">
+            <img ng-src="http://www.realmags.com/rest/api/wheel/{{picName3}}/pic?type=thumb"  style="height: 92px; width: 92px; transform: rotate(0deg);">
+          </div>
+          </div>
+          <div ng-click="updateRim(picName4)" ng-hide="picName4 === 'NA'">        <div  style="display: block; margin-top: 5px; top: 251.5px; left: 117.5px; z-index: 99;">
+            <img ng-src="http://www.realmags.com/rest/api/wheel/{{picName4}}/pic?type=thumb"  style="height: 92px; width: 92px; transform: rotate(0deg);">
+          </div>
+          </div>
+          <div ng-click="updateRim(picName5)" ng-hide="picName5 === 'NA'">        <div  style="display: block; margin-top: 5px; top: 251.5px; left: 117.5px; z-index: 99;">
+            <img ng-src="http://www.realmags.com/rest/api/wheel/{{picName5}}/pic?type=thumb"  style="height: 92px; width: 92px; transform: rotate(0deg);">
+          </div>
+          </div>
+          <div ng-click="updateRim(picName6)" ng-hide="picName6 === 'NA'">        <div  style="display: block; margin-top: 5px; top: 251.5px; left: 117.5px; z-index: 99;">
+            <img ng-src="http://www.realmags.com/rest/api/wheel/{{picName6}}/pic?type=thumb"  style="height: 92px; width: 92px; transform: rotate(0deg);">
+          </div>
+          </div>
+        </div>
 </div>
+        <div>
 
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
+          <nav>
+            <ul class="pager" style="margin-top: 10px; !important;">
+              <li class="previous"><a href ng-click="previousPics()" ><span aria-hidden="true">&larr;</span> Previous</a></li>
+              <div class="btn-group" role="group" aria-label="...">
+                <button type="button" class="btn btn-default" ><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                <button type="button" class="btn btn-default" class="disabled">Wheel Size</button>
+                <button type="button" class="btn btn-default"  ><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></button>
+              </div>
+              <li class="next"><a href ng-click="nextPics()">Next <span aria-hidden="true">&rarr;</span></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div ng-show="selectedTab ===3">
+        <p>Place holder for wheel brand</p>
+        <div class="containerCustom">
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Wheel Brand
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </div>
 
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
+        </div>
+      </div>
 
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
+
+    </div>
+
+    <section style="position:relative;">
+
+
+    </section>
+  </div>
 </div>

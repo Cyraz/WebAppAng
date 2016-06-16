@@ -42,6 +42,6 @@ angular
         controller: 'detailCtrl'
       })
       .otherwise({
-        redirectTo: '/v1'
+        redirectTo: '/main'
       });
   });
