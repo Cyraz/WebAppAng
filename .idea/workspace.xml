@@ -127,7 +127,7 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="FIRST">
               <first_editor relative-caret-position="300">
-                <caret line="18" column="61" selection-start-line="18" selection-start-column="61" selection-end-line="18" selection-end-column="61" />
+                <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -555,7 +555,7 @@
       <workItem from="1463686707095" duration="3949000" />
       <workItem from="1463780976373" duration="18505000" />
       <workItem from="1463837776860" duration="3640000" />
-      <workItem from="1466115140702" duration="3148000" />
+      <workItem from="1466115140702" duration="3188000" />
     </task>
     <task id="LOCAL-00001" summary="confugurator setup final without wheel and car databse!!&#10;After this extras such as student directory sample will be removed!!">
       <created>1466117798139</created>
@@ -571,11 +571,18 @@
       <option name="project" value="LOCAL" />
       <updated>1466118175224</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Readme Updated">
+      <created>1466118301348</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1466118301348</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96297000" />
+    <option name="totallyTimeSpent" value="96337000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -989,7 +996,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="FIRST">
           <first_editor relative-caret-position="300">
-            <caret line="18" column="61" selection-start-line="18" selection-start-column="61" selection-end-line="18" selection-end-column="61" />
+            <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
             <folding />
           </first_editor>
           <second_editor />
