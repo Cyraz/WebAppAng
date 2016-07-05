@@ -91,16 +91,93 @@ angular.module('configuratorApp')
 
 
     };
-    $scope.updateRim=function (pno) {
-      $scope.demoRim='http://www.realmags.com/rest/api/wheel/'+pno+'/pic?type=thumb';
-    }
-
-
-    $scope.restoreRim=function () {
+    function restRim() {
       $scope.demoRim='http://v2d.configurators.ru/photo/wheels/rear/57motorsport-g07cr-bright-silver-paint.png';
+      $("#config_wheelrear").animateRotate(-90, 1379, 'linear', function () {});
+      $("#config_wheelfront").animateRotate(-90, 1379, 'linear', function () {});
     }
+    $scope.restoreRim=restRim;
+
+    $scope.updateRim=function (pno) {
+      console.log("Update Rim: "+pno);
+      $scope.modelWheel=pno;
+      var yourURL = "http://localhost/interprise/images/images/"+pno+"/get.php";
+      /*$.get(
+        yourURL,
+        function(data, textStatus, jqXHR) {
+          $scope.modelWheelData=jQuery.parseJSON( data );
+          console.log("Succsess : Opening Modal with data : "+$scope.modelWheelData[0].name);
+          $('#myModal').modal();
+        }
+      ).fail(function () {
+        restRim();
+      });*/
+      $http({
+        method: 'GET',
+        url: yourURL
+      }).then(function successCallback(response) {
+        // this callback will be called asynchronously
+        // when the response is available
+        console.log("Angular http success : "+response.data);
+        $scope.modelWheelData=response.data;
+        $('#myModal').modal();
+      }, function errorCallback(response) {
+        console.log("Angular http failed : "+response.data);
+        restRim();
+        // called asynchronously if an error occurs
+        // or server returns response with an error status.
+      });
+      //Old Code to display pics as is shown on configurator
+      // $scope.demoRim='http://www.realmags.com/rest/api/wheel/'+pno+'/pic?type=thumb';
+      //   $("#config_wheelrear").animateRotate(-90, 1379, 'linear', function () {});
+      //   $("#config_wheelfront").animateRotate(-90, 1379, 'linear', function () {});
+    };
+    $scope.modalWheelUpdate=function (wheel,version) {
+      $scope.demoRim="http://localhost/interprise/images/images/"+wheel+"/"+version;
+      console.log("calling demo wheel with "+wheel+" and version : "+version);
+      $('#myModal').modal('hide');
+      $("#config_wheelrear").animateRotate(-90, 1379, 'linear', function () {});
+      $("#config_wheelfront").animateRotate(-90, 1379, 'linear', function () {});
+    };
 
 
+
+
+//Jquery START
+    $('#grow').click(function() {
+      var left = $('#config_wheelF');
+      left.show("fast");
+      $('#config_wheelF').animate({ "width": "+=" + left.width() * .02,"height": "+=" + left.height() * .02}, "fast");
+
+
+      var right = $('#config_wheelR');
+      right.show("fast");
+      $('#config_wheelR').animate({ "width": "+=" + right.width() * .02, "height": "+=" + left.height() * .02}, "fast");
+
+
+    });
+    $('#shrink').click(function() {
+      var left = $('#config_wheelF');
+      left.show("fast");
+      $('#config_wheelF').animate({ "width": "-=" + left.width() * .02,"height": "-=" + left.height() * .02}, "fast");
+
+
+      var right = $('#config_wheelR');
+      right.show("fast");
+      $('#config_wheelR').animate({ "width": "-=" + right.width() * .02 ,"height": "-=" + left.height() * .02}, "fast");
+    });
+
+    $('#size_default').click(function() {
+      $('#config_wheelF').width(92);
+      $('#config_wheelF').height(92);
+
+
+
+
+      $('#config_wheelR').width(92);
+      $('#config_wheelR').height(92);
+    });
+//Jquery END
 
 // Testing area
     $scope.testNS=function () {

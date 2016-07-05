@@ -1,7 +1,32 @@
-<div >
+<div>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Select the wheel types for {{modelWheel}}</h4>
+        </div>
+        <div class="modal-body">
+
+          <ul class="wheel_version">
+            <li  ng-repeat="mwh in modelWheelData">
+              <img class="hvr-grow-shadow" ng-click="modalWheelUpdate(modelWheel,mwh.name)" ng-src="http://localhost/interprise/images/images/{{modelWheel}}/{{mwh.name}}">
+              <p>{{mwh.shortname}}</p>
+
+          </li><!-- more list items -->
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+        </div>
+      </div>
+    </div>
+  </div>
   <div>
     <section>
-      <div class="card" >
+      <div class="card">
         <img src="images/car.png" width="810px" height="450px"> </img>
         <div id="config_wheelrear" style="display: block; top: 251.5px; left: 573.5px; z-index: 99;">
           <img ng-src="{{demoRim}}" id="config_wheelR" style="height: 92px; width: 92px; transform: rotate(0deg);">
@@ -12,8 +37,8 @@
 
       </div>
     </section>
-    <div class="card-v1" >
-      <ul class="nav nav-pills nav-justified" >
+    <div class="card-v1">
+      <ul class="nav nav-pills nav-justified">
         <li role="presentation" class="{{isActiveTab(1)}}"><a href ng-click="selectedTab =1">Car</a></li>
         <li role="presentation" class="{{isActiveTab(2)}}"><a href ng-click="selectedTab =2">Wheels</a></li>
         <li role="presentation" class="{{isActiveTab(3)}}"><a href ng-click="selectedTab =3">Brand</a></li>
@@ -23,97 +48,120 @@
         <p>Place holder for car model</p>
         <div class="containerCustom">
           <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu0" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="true">
               Year
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
+              <li><a href="#">2013</a></li>
+              <li><a href="#">2014</a></li>
+              <li><a href="#">2015</a></li>
               <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
+              <li><a href="#">Custom Year</a></li>
             </ul>
           </div>
           <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="true">
               Car Maker
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
+              <li><a href="#">BMW</a></li>
+              <li><a href="#">Mercedes</a></li>
+              <li><a href="#">Honda</a></li>
               <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
+              <li><a href="#">Others</a></li>
             </ul>
           </div>
           <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="true">
               Car Model
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
+              <li><a href="#">Model A</a></li>
+              <li><a href="#">Model B</a></li>
+              <li><a href="#">Model C</a></li>
               <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
+              <li><a href="#">Others</a></li>
             </ul>
           </div>
           <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="true">
               Version
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
+              <li><a href="#">2.5 L</a></li>
+              <li><a href="#">520 DI</a></li>
+              <li><a href="#">X6</a></li>
               <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
+              <li><a href="#">Other</a></li>
             </ul>
           </div>
         </div>
       </div>
       <div ng-show="selectedTab ===2">
         <div class="card-v2">
-        <div id="container">
-          <div ng-click="restoreRim()" ng-hide="picName1 === 'NA'">        <div  style="display: block; margin-top: 5px; top: 251.5px; left: 117.5px; z-index: 99;">
-            <img ng-src="http://www.realmags.com/rest/api/wheel/{{picName1}}/pic?type=thumb"  style="height: 92px; width: 92px; transform: rotate(0deg);">
-          </div>
-          </div>
-          <div ng-click="updateRim(picName2)" ng-hide="picName2 === 'NA'">        <div  style="display: block; margin-top: 5px; top: 251.5px; left: 117.5px; z-index: 99;">
-            <img ng-src="http://www.realmags.com/rest/api/wheel/{{picName2}}/pic?type=thumb"  style="height: 92px; width: 92px; transform: rotate(0deg);">
-          </div>
-          </div>
-          <div ng-click="updateRim(picName3)" ng-hide="picName3 === 'NA'">        <div  style="display: block; margin-top: 5px; top: 251.5px; left: 117.5px; z-index: 99;">
-            <img ng-src="http://www.realmags.com/rest/api/wheel/{{picName3}}/pic?type=thumb"  style="height: 92px; width: 92px; transform: rotate(0deg);">
-          </div>
-          </div>
-          <div ng-click="updateRim(picName4)" ng-hide="picName4 === 'NA'">        <div  style="display: block; margin-top: 5px; top: 251.5px; left: 117.5px; z-index: 99;">
-            <img ng-src="http://www.realmags.com/rest/api/wheel/{{picName4}}/pic?type=thumb"  style="height: 92px; width: 92px; transform: rotate(0deg);">
-          </div>
-          </div>
-          <div ng-click="updateRim(picName5)" ng-hide="picName5 === 'NA'">        <div  style="display: block; margin-top: 5px; top: 251.5px; left: 117.5px; z-index: 99;">
-            <img ng-src="http://www.realmags.com/rest/api/wheel/{{picName5}}/pic?type=thumb"  style="height: 92px; width: 92px; transform: rotate(0deg);">
-          </div>
-          </div>
-          <div ng-click="updateRim(picName6)" ng-hide="picName6 === 'NA'">        <div  style="display: block; margin-top: 5px; top: 251.5px; left: 117.5px; z-index: 99;">
-            <img ng-src="http://www.realmags.com/rest/api/wheel/{{picName6}}/pic?type=thumb"  style="height: 92px; width: 92px; transform: rotate(0deg);">
-          </div>
+          <div id="container">
+
+            <div ng-click="updateRim(picName1)" ng-hide="picName1 === 'NA'">
+              <div style="display: block; margin-top: 5px; top: 251.5px; left: 117.5px; z-index: 99;">
+                <img ng-src="http://www.realmags.com/rest/api/wheel/{{picName1}}/pic?type=thumb"
+                     style="height: 92px; width: 92px; transform: rotate(0deg);">
+              </div>
+            </div>
+            <div ng-click="updateRim(picName2)" ng-hide="picName2 === 'NA'">
+              <div style="display: block; margin-top: 5px; top: 251.5px; left: 117.5px; z-index: 99;">
+                <img ng-src="http://www.realmags.com/rest/api/wheel/{{picName2}}/pic?type=thumb"
+                     style="height: 92px; width: 92px; transform: rotate(0deg);">
+              </div>
+            </div>
+            <div ng-click="updateRim(picName3)" ng-hide="picName3 === 'NA'">
+              <div style="display: block; margin-top: 5px; top: 251.5px; left: 117.5px; z-index: 99;">
+                <img ng-src="http://www.realmags.com/rest/api/wheel/{{picName3}}/pic?type=thumb"
+                     style="height: 92px; width: 92px; transform: rotate(0deg);">
+              </div>
+            </div>
+            <div ng-click="updateRim(picName4)" ng-hide="picName4 === 'NA'">
+              <div style="display: block; margin-top: 5px; top: 251.5px; left: 117.5px; z-index: 99;">
+                <img ng-src="http://www.realmags.com/rest/api/wheel/{{picName4}}/pic?type=thumb"
+                     style="height: 92px; width: 92px; transform: rotate(0deg);">
+              </div>
+            </div>
+            <div ng-click="updateRim(picName5)" ng-hide="picName5 === 'NA'">
+              <div style="display: block; margin-top: 5px; top: 251.5px; left: 117.5px; z-index: 99;">
+                <img ng-src="http://www.realmags.com/rest/api/wheel/{{picName5}}/pic?type=thumb"
+                     style="height: 92px; width: 92px; transform: rotate(0deg);">
+              </div>
+            </div>
+            <div ng-click="updateRim(picName6)" ng-hide="picName6 === 'NA'">
+              <div style="display: block; margin-top: 5px; top: 251.5px; left: 117.5px; z-index: 99;">
+                <img ng-src="http://www.realmags.com/rest/api/wheel/{{picName6}}/pic?type=thumb"
+                     style="height: 92px; width: 92px; transform: rotate(0deg);">
+              </div>
+            </div>
+
           </div>
         </div>
-</div>
         <div>
 
           <nav>
             <ul class="pager" style="margin-top: 10px; !important;">
-              <li class="previous"><a href ng-click="previousPics()" ><span aria-hidden="true">&larr;</span> Previous</a></li>
+              <li class="previous"><a href ng-click="previousPics()"><span aria-hidden="true">&larr;</span> Previous</a>
+              </li>
               <div class="btn-group" role="group" aria-label="...">
-                <button type="button" class="btn btn-default" ><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
-                <button type="button" class="btn btn-default" class="disabled">Wheel Size</button>
-                <button type="button" class="btn btn-default"  ><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></button>
+                <button id="grow" type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus"
+                                                                              aria-hidden="true"></span></button>
+                <button id="size_default" type="button" class="btn btn-default" data-toggle="tooltip"
+                        data-placement="top" title="Set default size">Wheel Size
+                </button>
+                <button id="shrink" type="button" class="btn btn-default"><span class="glyphicon glyphicon-minus"
+                                                                                aria-hidden="true"></span></button>
               </div>
               <li class="next"><a href ng-click="nextPics()">Next <span aria-hidden="true">&rarr;</span></a></li>
             </ul>
@@ -124,16 +172,17 @@
         <p>Place holder for wheel brand</p>
         <div class="containerCustom">
           <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu5" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="true">
               Wheel Brand
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
+              <li><a href="#">Brand 01</a></li>
+              <li><a href="#">Brand 02</a></li>
+              <li><a href="#">Brand 03</a></li>
               <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
+              <li><a href="#">Others</a></li>
             </ul>
           </div>
 
